@@ -1,0 +1,23 @@
+Authentication
+   -- In-memory authentication
+   -- JDBC Authentication
+   -- Custom UserDetails Service
+
+Authorization
+   -- JWT Token
+
+
++++++++++++++++++++++++++++++++++++
+
+Once we add spring-security dependency,.
+ 
+a) Spring boot protects all the endpoints.
+b) It creates a default user =>    username  => user and password => Please check console for password
+c) There is login page displayed by spring application if user is not aithenticated.  [ http://localhost:8082/login ]
+
+     /login => Endpoint created by spring boot that displays login page.
+     /login?error  =>  Endpoint created by spring boot that display error message (if credentials are wrong).
+     /logout   => Endpoint created by spring boot that helps user to logout.
+     login?logout   =>  Redirected to login page after logout.
+
+If we want to customized authentication and authorization, then we have to create configuration class that is extended from WebSecurityConfigurerAdapter
